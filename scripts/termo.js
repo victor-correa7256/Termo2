@@ -3,7 +3,7 @@ var botao = document.getElementById("bjogos")
 var triang = document.getElementsByClassName('triang')[0]
 var teclas = document.getElementsByClassName("tecla")
 var papert = true
-var texto = "OLHOS"
+var texto = "TEXTO"
 var jogo = document.getElementsByClassName("jogo")
 var select = [[],[],[],[],[],[]]
 var apaga = document.getElementById('apaga')
@@ -11,6 +11,16 @@ var enter = document.getElementById('enter')
 botao.addEventListener("click",teste)
 apaga.addEventListener("click",apagar)
 enter.addEventListener("click",inter)
+
+
+
+
+
+function mostra(){
+    for(var o =0;o<=5;o++){
+        select[l][o].style.background = "#6F5C62"
+    }
+}
 function teste(){
     
     if (papert){
@@ -93,11 +103,32 @@ function inter(){
             
         
         if(texto.includes(select[l][i].innerText) && cola[select[l][i].innerText] != 0){
+            
+            for(var o of teclas){
+                if(texto.includes(o.innerText)){
+                    o.style.background = "yellow"
+                }else if(select[l][i].innerText == o.innerText){
+                    o.style.background = "black"
+                }
+            }
             cola[select[l][i].innerText] -= 1
             select[l][i].style.background = "yellow"
             select[l][i].style.transform = "rotatey(360deg)"
+        }else{
+            select[l][i].style.background = "#4C4346"
+            for(var o of teclas){
+                if(o.innerText == select[l][i].innerText && !(o.style.background == "green" || o.style.background == "yellow")){
+                    o.style.background = "black"
+                }
+            }
         }
         if(select[l][i].innerText == texto[i]){
+            
+        for(var o of teclas){
+            if(select[l][i].innerText == o.innerText){
+                o.style.background = "green"
+            }
+        }
             
             select[l][i].style.background = "green"
             select[l][i].style.transform = "rotatey(360deg)"
@@ -109,4 +140,6 @@ function inter(){
         l= 6
     }
     a=0
+    mostra()
 }
+mostra()
