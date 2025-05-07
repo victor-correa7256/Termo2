@@ -105,9 +105,9 @@ function inter(){
         if(texto.includes(select[l][i].innerText) && cola[select[l][i].innerText] != 0){
             
             for(var o of teclas){
-                if(texto.includes(o.innerText)){
+                if(select[l][i].innerText == o.innerText && !(o.style.background == "green")){
                     o.style.background = "yellow"
-                }else if(select[l][i].innerText == o.innerText){
+                }else if(select[l][i].innerText == o.innerText  && !(o.style.background == "green" || o.style.background == "yellow")){
                     o.style.background = "black"
                 }
             }
