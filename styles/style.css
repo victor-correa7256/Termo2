@@ -1,0 +1,127 @@
+
+
+*{
+  margin: 0;
+  padding: 0
+}
+
+
+teclado div button{
+  width: 1.098em;
+  height: 2.196em;
+  background: #4C4346;
+  color: white;
+  font-size: 5em;
+  margin-left: 2.5px;
+}
+teclado div button#enter{
+  width: 3.46em;
+  height: 2.196em;
+  background: #4C4346;
+  color: white;
+  font-size: 5em;
+  margin-left: 2.5px;
+}
+teclado div{
+  margin: auto;
+  background: transparent;
+  width: 96dvw;
+  margin-top: 3px;
+  
+}
+div#jogo button{
+  width: 1em;
+  height: 1em;
+  font-size: 10em;
+  color: white;
+  background: #6F5C62;
+  border: 10px solid #4C4346;
+  border-radius: 15px;
+  position: relative;
+  transform: rotatey(0deg);
+  transition: transform 1s,background 0.7s
+  
+}
+div#jogo div button p{
+  position: absolute;
+  top:-20px;
+}
+div#jogo{
+  background: transparent;
+  width: 817px;
+  margin: auto;
+  margin-top: 50px;
+  display: inline-block
+}
+div#jogo div{
+  margin-top: 20px
+}
+
+teclado div.lin1{
+  background: transparent;
+}
+teclado div.lin2{
+  background: transparent;
+}
+teclado div.lin3{
+  background: transparent;
+}
+
+teclado{
+  background: transparent;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100dvw;
+  height: 600px;
+  
+}
+nav.jogos{
+  background: black;
+  width: 100dvw;
+  height: 0em;
+  color: white;
+  font-size: 2em;
+  overflow: hidden;
+  transition: 1s;
+  
+}
+nav.jogos a{
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  margin-top:5px
+}
+
+
+nav.titulo button{
+  width: 6em;
+  height: 6em;
+  border: 0.5em solid #B7AEB3;
+  border-radius: 1.8em;
+  background: transparent;
+  transition: 1s
+}
+nav.titulo button div.triang{
+  background: transparent;
+  width: 0em;
+  height: 0em;
+  border-left: 20px solid #B7AEB3;
+  border-bottom: 20px solid transparent;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: rotate(45deg) scale(1.5,1.5) translate(-50%,-50%);
+  transform-origin: center top;
+  transition: 1s
+}
+
+
+/*nav.titulo button:hover div.triang{
+  transform: rotate(225deg) scale(1.5,1.5);
+  translate: -20px -15px
+}*/
+
+body, html{
+  background: #6F5C62
+}
