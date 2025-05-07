@@ -34,7 +34,7 @@ div#jogo button{
   height: 1em;
   font-size: 10em;
   color: white;
-  background: #6F5C62;
+  background: #4C4346;
   border: 10px solid #4C4346;
   border-radius: 15px;
   position: relative;
@@ -51,7 +51,8 @@ div#jogo{
   width: 817px;
   margin: auto;
   margin-top: 50px;
-  display: inline-block
+  margin-left: 8%;
+  display: inline-block;
 }
 div#jogo div{
   margin-top: 20px
