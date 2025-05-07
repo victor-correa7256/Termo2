@@ -84,62 +84,60 @@ function apagar(){
     select[l][a].style.background = "gray"
 }
 function inter(){
-    var cola = {}
-    for(var i of texto){
-        if(!(i in cola)){
-            cola[i]= 1
-        }else{
-            cola[i] += 1
+    var vazio = [select[l][0].innerText == "",select[l][1].innerText == "",select[l][2].innerText == "",select[l][3].innerText == "",select[l][4].innerText == ""]
+    if(!(vazio.some(Boolean))){
+        var cola = {}
+        for(var i of texto){
+            if(!(i in cola)){
+                cola[i]= 1
+            }else{
+                cola[i] += 1
+            }
         }
-    }
-    for(var r= 0; r<5; r++){
-        select[l][r].style.background = "#6F5C62"
-    }
-    for(var i = 0; i < 5;i++){
-        
-        if(select[l][i].innerText == texto[i] && cola[select[l][i].innerText] != 0){
-            cola[select[l][i].innerText] -= 1
+        for(var r= 0; r<5; r++){
+            select[l][r].style.background = "#6F5C62"
         }
-            
-        
-        if(texto.includes(select[l][i].innerText) && cola[select[l][i].innerText] != 0){
-            
-            for(var o of teclas){
-                if(select[l][i].innerText == o.innerText && !(o.style.background == "green")){
-                    o.style.background = "yellow"
-                }else if(select[l][i].innerText == o.innerText  && !(o.style.background == "green" || o.style.background == "yellow")){
-                    o.style.background = "black"
+        for(var i = 0; i < 5;i++){
+            if(select[l][i].innerText == texto[i] && cola[select[l][i].innerText] != 0){
+                cola[select[l][i].innerText] -= 1
+            }
+            if(texto.includes(select[l][i].innerText) && cola[select[l][i].innerText] != 0){
+                for(var o of teclas){
+                    if(select[l][i].innerText == o.innerText && !(o.style.background == "green")){
+                        o.style.background = "yellow"
+                    }else if(select[l][i].innerText == o.innerText  && !(o.style.background == "green" || o.style.background == "yellow")){
+                        o.style.background = "black"
+                    }
+                }
+                cola[select[l][i].innerText] -= 1
+                select[l][i].style.background = "yellow"
+                select[l][i].style.transform = "rotatey(360deg)"
+            }else{
+                select[l][i].style.background = "#4C4346"
+                for(var o of teclas){
+                    if(o.innerText == select[l][i].innerText && !(o.style.background == "green" || o.style.background == "yellow")){
+                        o.style.background = "black"
+                    }
                 }
             }
-            cola[select[l][i].innerText] -= 1
-            select[l][i].style.background = "yellow"
-            select[l][i].style.transform = "rotatey(360deg)"
-        }else{
-            select[l][i].style.background = "#4C4346"
-            for(var o of teclas){
-                if(o.innerText == select[l][i].innerText && !(o.style.background == "green" || o.style.background == "yellow")){
-                    o.style.background = "black"
+            if(select[l][i].innerText == texto[i]){
+                
+                for(var o of teclas){
+                    if(select[l][i].innerText == o.innerText){
+                        o.style.background = "green"
+                    }
                 }
+                select[l][i].style.background = "green"
+                select[l][i].style.transform = "rotatey(360deg)"
             }
         }
-        if(select[l][i].innerText == texto[i]){
-            
-        for(var o of teclas){
-            if(select[l][i].innerText == o.innerText){
-                o.style.background = "green"
-            }
+        if(select[l][0].innerText+select[l][1].innerText+select[l][2].innerText+select[l][3].innerText+select[l][4].innerText != texto){
+            l++
+        }else{
+            l= 6
         }
-            
-            select[l][i].style.background = "green"
-            select[l][i].style.transform = "rotatey(360deg)"
-        }
+        a=0
+        mostra()
     }
-    if(select[l][0].innerText+select[l][1].innerText+select[l][2].innerText+select[l][3].innerText+select[l][4].innerText != texto){
-        l++
-    }else{
-        l= 6
-    }
-    a=0
-    mostra()
 }
 mostra()
