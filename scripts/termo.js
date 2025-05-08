@@ -75,7 +75,6 @@ function apagar(){
     if(a>0){
         a--
     }
-    nav.innerText = "oi"
     for(var r= 0; r<5; r++){
         select[l][r].style.background = "#6F5C62"
     }
