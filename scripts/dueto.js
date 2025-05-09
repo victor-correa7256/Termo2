@@ -3,7 +3,7 @@ var botao = document.getElementById("bjogos")
 var triang = document.getElementsByClassName('triang')[0]
 var teclas = document.getElementsByClassName("tecla")
 var papert = true
-var texto = ["LETRA","TESTA"]
+var texto = ["PALHA","PASTA"]
 var jogo = document.getElementsByClassName("jogo")
 var select = [
 [[],[],[],[],[],[],[]],
